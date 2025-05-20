@@ -2,4 +2,4 @@
 
 ## Live Demo
 
-[View Live App](https://kf-rt-alpha.vercel.app/)
+[View Live App](https://kf-rt-typing-game-u61ve2cof-kofi-arhins-projects.vercel.app/)
