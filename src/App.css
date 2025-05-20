@@ -1,0 +1,244 @@
+/* Base Layout */
+.App {
+  max-width: 800px;
+  margin: 60px auto;
+  font-family: sans-serif;
+  text-align: center;
+  padding: 0 16px;
+}
+
+/* Sticky Header */
+.sticky-header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #222;
+  color: white;
+  padding: 10px 16px;
+  font-size: 1rem;
+  font-weight: bold;
+  z-index: 999;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.sticky-header span {
+  flex: 1;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.sticky-header .score {
+  text-align: right;
+}
+
+.sticky-header .best-wpm {
+  text-align: left;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  .sticky-header {
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.95rem;
+  }
+
+  .sticky-header span {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 6px;
+  }
+
+  .prompt {
+    font-size: 1.1rem;
+    padding: 8px;
+    line-height: 1.8rem;
+    word-break: break-word;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .word {
+    margin: 2px;
+  }
+
+  .active-word {
+    font-size: 1.3rem;
+  }
+
+  input[type="text"] {
+    font-size: 1.1rem;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .difficulty-select button,
+  .result button,
+  .quit-button button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+/* Difficulty Selection */
+.difficulty-select h2 {
+  margin-bottom: 20px;
+}
+
+.difficulty-select button,
+.result button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #444;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.difficulty-select button:hover,
+.result button:hover {
+  background-color: #222;
+}
+
+/* Stats Display */
+.stats {
+  display: flex;
+  justify-content: center;
+  font-size: 1.1rem;
+  margin: 20px auto;
+  font-weight: bold;
+}
+
+/* Typing Prompt */
+.prompt {
+  font-size: 1.5rem;
+  line-height: 2.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px 0;
+  min-height: 100px;
+  margin-bottom: 20px;
+  word-break: break-word;
+}
+
+/* Word Styling */
+.word {
+  margin: 0 4px;
+  color: gray;
+  word-break: break-word;
+}
+
+.word.typed {
+  font-weight: bold;
+}
+
+.word.current {
+  text-decoration: underline;
+}
+
+.active-word {
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: black;
+}
+
+/* Input Field */
+input[type="text"] {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 1.2rem;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  background-color: transparent;
+  color: black;
+}
+
+input[type="text"]:disabled {
+  background-color: #f2f2f2;
+  color: #999;
+}
+
+/* Game Over */
+.game-over {
+  margin-top: 20px;
+  color: red;
+  font-weight: bold;
+  text-align: center;
+}
+
+.game-over h1 {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px black;
+}
+
+/* Results */
+.result h2 {
+  margin-top: 30px;
+  font-size: 1.8rem;
+}
+
+.result h3 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+}
+
+/* Countdown Overlay */
+.countdown-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(20, 20, 20, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.countdown-text {
+  font-size: 6rem;
+  color: #fff;
+  font-weight: bold;
+  animation: pop 0.5s ease;
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.5);
+    opacity: 0.3;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Quit Button */
+.quit-button {
+  margin-top: 20px;
+}
+
+.quit-button button {
+  padding: 10px 25px;
+  font-size: 1rem;
+  background-color: #b00020;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.quit-button button:hover {
+  background-color: #7a0014;
+}
