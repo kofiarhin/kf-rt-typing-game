@@ -231,7 +231,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Typing Game</h1>
+      <h1 className="title">Typing Game</h1>
 
       {countdown !== null && (
         <div className="countdown-overlay">

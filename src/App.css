@@ -1,13 +1,12 @@
-/* Base Layout */
+/* Layout */
 .App {
   max-width: 800px;
   margin: 60px auto;
-  font-family: sans-serif;
-  text-align: center;
   padding: 0 16px;
+  text-align: center;
+  font-family: sans-serif;
 }
 
-/* Sticky Header */
 .sticky-header {
   position: sticky;
   top: 0;
@@ -15,12 +14,12 @@
   flex-wrap: wrap;
   justify-content: space-between;
   background-color: #222;
-  color: white;
   padding: 10px 16px;
-  font-size: 1rem;
-  font-weight: bold;
   z-index: 999;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
 }
 
 .sticky-header span {
@@ -37,100 +36,29 @@
   text-align: left;
 }
 
-/* Mobile Responsive */
-@media (max-width: 600px) {
-  .sticky-header {
-    flex-direction: column;
-    align-items: center;
-    font-size: 0.95rem;
-  }
-
-  .sticky-header span {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 6px;
-  }
-
-  .prompt {
-    font-size: 1.1rem;
-    padding: 8px;
-    line-height: 1.8rem;
-    word-break: break-word;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
-
-  .word {
-    margin: 2px;
-  }
-
-  .active-word {
-    font-size: 1.3rem;
-  }
-
-  input[type="text"] {
-    font-size: 1.1rem;
-    padding: 10px;
-    width: 100%;
-  }
-
-  .difficulty-select button,
-  .result button,
-  .quit-button button {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-}
-
-/* Difficulty Selection */
-.difficulty-select h2 {
-  margin-bottom: 20px;
-}
-
-.difficulty-select button,
-.result button {
-  margin: 10px;
-  padding: 10px 20px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 5px;
-  background-color: #444;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.difficulty-select button:hover,
-.result button:hover {
-  background-color: #222;
-}
-
-/* Stats Display */
 .stats {
   display: flex;
   justify-content: center;
-  font-size: 1.1rem;
   margin: 20px auto;
+  font-size: 1.1rem;
   font-weight: bold;
 }
 
-/* Typing Prompt */
 .prompt {
-  font-size: 1.5rem;
-  line-height: 2.2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   padding: 10px 0;
   min-height: 100px;
   margin-bottom: 20px;
+  font-size: 1.5rem;
+  line-height: 2.2rem;
   word-break: break-word;
 }
 
-/* Word Styling */
 .word {
   margin: 0 4px;
-  color: gray;
+  color: rgb(110, 109, 109);
   word-break: break-word;
 }
 
@@ -144,11 +72,10 @@
 
 .active-word {
   font-weight: bold;
-  font-size: 1.8rem;
-  color: black;
+  font-size: 2rem;
+  color: rgb(3, 44, 119);
 }
 
-/* Input Field */
 input[type="text"] {
   width: 100%;
   padding: 12px 16px;
@@ -166,7 +93,6 @@ input[type="text"]:disabled {
   color: #999;
 }
 
-/* Game Over */
 .game-over {
   margin-top: 20px;
   color: red;
@@ -180,7 +106,6 @@ input[type="text"]:disabled {
   text-shadow: 2px 2px black;
 }
 
-/* Results */
 .result h2 {
   margin-top: 30px;
   font-size: 1.8rem;
@@ -191,7 +116,6 @@ input[type="text"]:disabled {
   margin-bottom: 20px;
 }
 
-/* Countdown Overlay */
 .countdown-overlay {
   position: fixed;
   top: 0;
@@ -223,22 +147,83 @@ input[type="text"]:disabled {
   }
 }
 
-/* Quit Button */
+.difficulty-select h2 {
+  margin-bottom: 20px;
+}
+
+.difficulty-select button,
+.result button,
+.quit-button button {
+  font-size: 1rem;
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #444;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.difficulty-select button:hover,
+.result button:hover {
+  background-color: #222;
+}
+
 .quit-button {
   margin-top: 20px;
 }
 
 .quit-button button {
-  padding: 10px 25px;
-  font-size: 1rem;
   background-color: #b00020;
-  color: white;
-  border: none;
   border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.2s ease;
+  padding: 10px 25px;
 }
 
 .quit-button button:hover {
   background-color: #7a0014;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .title {
+    display: none;
+  }
+  .sticky-header {
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.95rem;
+  }
+
+  .sticky-header span {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 6px;
+  }
+
+  .prompt {
+    font-size: 1.1rem;
+    padding: 8px;
+    line-height: 1.8rem;
+  }
+
+  .word {
+    margin: 2px;
+  }
+
+  .active-word {
+    font-size: 1.3rem;
+  }
+
+  input[type="text"] {
+    font-size: 1.1rem;
+    padding: 10px;
+  }
+
+  .difficulty-select button,
+  .result button,
+  .quit-button button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
 }
